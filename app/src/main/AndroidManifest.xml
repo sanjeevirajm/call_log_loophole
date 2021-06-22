@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.call_log_loophole"
     >
 
     <application
@@ -13,7 +14,7 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <provider
-            android:name="com.example.call_log_loophole.CallLogContentProvider"
+            android:name=".CallLogContentProvider"
             android:authorities="@string/call_log_loophole_authority"
             android:readPermission="android.permission.READ_CONTACTS"
             android:enabled="true"

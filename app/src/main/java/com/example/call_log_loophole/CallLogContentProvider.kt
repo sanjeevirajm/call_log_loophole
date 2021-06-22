@@ -3,6 +3,7 @@ package com.example.call_log_loophole
 import android.content.ContentProvider
 import android.content.ContentValues
 import android.content.UriMatcher
+import android.content.res.AssetFileDescriptor
 import android.database.Cursor
 import android.database.MatrixCursor
 import android.net.Uri
@@ -30,7 +31,9 @@ class CallLogContentProvider : ContentProvider() {
             authorityUri = Uri.parse("content://$authority")
 
             uriMatcher.apply {
+                addURI(authority, "directories", DIRECTORIES)
                 addURI(authority, "phone_lookup/*", PHONE_LOOKUP)
+                addURI(authority, PRIMARY_PHOTO_URI, PRIMARY_PHOTO)
             }
         }
         return true
@@ -72,6 +75,13 @@ class CallLogContentProvider : ContentProvider() {
 
     override fun getType(uri: Uri): String? {
         return null
+    }
+
+    override fun openAssetFile(uri: Uri, mode: String): AssetFileDescriptor? {
+        return when(uriMatcher.match(uri)) {
+            PRIMARY_PHOTO -> context?.resources?.openRawResourceFd(R.raw.phineas)
+            else -> null
+        }
     }
 
     override fun delete(uri: Uri, selection: String?, selectionArgs: Array<String>?): Int {
