@@ -1,14 +1,12 @@
-package com.example.simplecallerid.db
+package com.example.call_log_loophole.db
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import androidx.room.TypeConverters
-import com.example.simplecallerid.models.User
+import com.example.call_log_loophole.models.User
 
 @Database(entities = [User::class], version = 1)
-@TypeConverters(User.PhoneTypeConverter::class)
 abstract class UserDatabase: RoomDatabase() {
     abstract fun userDao(): UserDao
 

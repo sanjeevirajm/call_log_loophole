@@ -1,9 +1,9 @@
-package com.example.simplecallerid
+package com.example.call_log_loophole
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
-import com.example.simplecallerid.ui.main.MainFragment
+import com.example.call_log_loophole.ui.main.MainFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,11 +15,6 @@ class MainActivity : AppCompatActivity() {
                 .replace(R.id.container, MainFragment.newInstance())
                 .commitNow()
         }
-        supportActionBar?.title = getString(R.string.your_users)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.main_menu, menu)
-        return super.onCreateOptionsMenu(menu)
+        supportActionBar?.title = getString(R.string.call_log)
     }
 }

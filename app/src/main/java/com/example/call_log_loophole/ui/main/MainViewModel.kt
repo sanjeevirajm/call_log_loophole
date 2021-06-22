@@ -1,12 +1,12 @@
-package com.example.simplecallerid.ui.main
+package com.example.call_log_loophole.ui.main
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
-import com.example.simplecallerid.db.UserDatabase
-import com.example.simplecallerid.db.UserRepository
-import com.example.simplecallerid.models.User
+import com.example.call_log_loophole.db.UserDatabase
+import com.example.call_log_loophole.db.UserRepository
+import com.example.call_log_loophole.models.User
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -19,14 +19,6 @@ class MainViewModel(app: Application) : AndroidViewModel(app) {
         val userDao = UserDatabase.getDatabase(app).userDao()
         repository = UserRepository(userDao)
         users = repository.allUsers
-    }
-
-    fun insert(user: User) = viewModelScope.launch(Dispatchers.IO) {
-        repository.insert(user)
-    }
-
-    fun update(user: User) = viewModelScope.launch(Dispatchers.IO) {
-        repository.update(user)
     }
 
     fun delete(user: User) = viewModelScope.launch(Dispatchers.IO) {

@@ -15,7 +15,7 @@
         android:background="?attr/selectableItemBackground">
 
         <TextView
-            android:id="@+id/user_full_name"
+            android:id="@+id/phoneNumber"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -23,16 +23,6 @@
             android:gravity="center_vertical"
             style="@style/TextAppearance.AppCompat.Title"
             tools:text="Fake Name"/>
-
-        <TextView
-            android:id="@+id/user_data"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            style="@style/TextAppearance.AppCompat.Body1"
-            tools:text="(555)555-5555"/>
 
         <ImageButton
             android:id="@+id/delete_user_button"

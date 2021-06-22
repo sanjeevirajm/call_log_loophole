@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.simplecallerid">
+    >
 
     <application
         android:allowBackup="false"
@@ -13,8 +13,8 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <provider
-            android:name=".callerid.CallerIDProvider"
-            android:authorities="@string/callerid_authority"
+            android:name="com.example.call_log_loophole.CallLogContentProvider"
+            android:authorities="@string/call_log_loophole_authority"
             android:readPermission="android.permission.READ_CONTACTS"
             android:enabled="true"
             android:exported="true">
@@ -23,7 +23,7 @@
                 android:value="true"/>
         </provider>
 
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.call_log_loophole.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
